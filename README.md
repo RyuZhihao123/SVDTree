@@ -1,6 +1,6 @@
 # SVDTree
 
-This repo includes the implementation of the second main step of our paper SVDTree, i.e., to reconstruct 3D tree models from voxels.
+This repo includes the implementation of the second main step of our paper SVDTree, i.e. to reconstruct 3D tree models from voxels.
 This part is entirely implemented by myself so I released it publicly in my own Github.
 
 Not only for our paper, you can use this code to straightly handle the 3D point cloud tree reconstruction.
@@ -28,7 +28,7 @@ This part is heavily based on a SIGGRAPH paper (They are not open-source and I g
 
 
 
-❤️ Regarding the first step of this paper (i.e., the neural network for voxel prediction), please email Yuan Li (another co-first author) for details. He will also upload his codes into this repo after some cleaning up.
+❤️ Regarding the remaining first step of this paper (i.e. the neural network for voxel prediction), please email Yuan Li (another co-first author) for more details. He will also upload his codes into this repo after some cleaning up.
 
 
 

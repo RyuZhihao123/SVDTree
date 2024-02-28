@@ -5,7 +5,7 @@ This part is entirely implemented by myself so I released it publicly in my own 
 
 Not only for our paper, you can use this code to straightly handle the 3D point cloud tree reconstruction.
 
-This part is heavily based on a SIGGRAPH paper (They are not open-source and I guess my implementation is the first shared publicly).
+This part is heavily based on a SIGGRAPH paper (They are not open-source and I guess my code is the first public re-implementation).
 
 
 ## Point Cloud (Voxel)-based 3D Tree Reconstruction. 

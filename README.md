@@ -50,9 +50,6 @@ Please also download this example 3D point cloud file [[xyz file](https://github
 
 
 
-❤️ Regarding the remaining first step of this paper (i.e. the neural network for voxel prediction), please email Yuan Li (another co-first author) for more details. He will also upload his codes into this repo after some cleaning up.
-
-
 
 
 

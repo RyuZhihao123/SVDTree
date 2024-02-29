@@ -18,6 +18,8 @@ Since point clouds are way more complex and common than the voxel representation
 
 You can use Qt 5.8+ or Visual Studio 2019+ to easily compile it. The configuration of **CMake** and **OpenGL** is also required.
 
+Please also download this example 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)] to quickly have a try with our software.
+
 :heart: **My software** (User Interface):
 
 <div align=center>

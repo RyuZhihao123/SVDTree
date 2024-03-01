@@ -5,6 +5,7 @@ This repo includes the implementation of our paper **SVDTree (CVPR 2024)**.
 - I am one of the joint first authors ([Zhihao Liu](https://ryuzhihao123.github.io/)), who take charge of the implementation of the **second main step** of this paper, i.e. **``Voxel (Point Cloud)-based 3D Tree Reconstruction``**.
 This part is entirely implemented by myself so I released it seperately in my own Github.
 
+![image info](https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png)
 
 ## Point Cloud (Voxel)-based 3D Tree Reconstruction. 
 

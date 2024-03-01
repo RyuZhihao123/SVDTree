@@ -39,12 +39,6 @@ Please also download this example 3D point cloud file [[xyz file](https://github
 
 
 
-### Results.
-
-
-- A tree reconstructed from point cloud (captured from 3D scanner).
-
-- A tree reconstructed from voxel. (This is the case shown in the supplemental material)
 
 
 

@@ -9,7 +9,7 @@ This part is entirely implemented by myself so I released it seperately in my ow
 
 ## Point Cloud (Voxel)-based 3D Tree Reconstruction. 
 
-Since point clouds are way more complex and common than the voxel representation used in our paper, we released a more generic version of our codes so that you can easily handle both two data representations more robustly. 
+Since point clouds are way more complex and common than the voxel representation used in our paper, we released a **more Generic Version** of our codes so that you can easily handle both two data representations more robustly. 
 
 
 :heart: **Source Codes**: Please check this [[folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_Codes)] for my full source codes. 

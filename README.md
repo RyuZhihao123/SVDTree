@@ -14,11 +14,13 @@ This part is entirely implemented by myself so I released it seperately in my ow
 Since point clouds are way more complex and common than the voxel representation used in our paper, we released a **more Generic Version** of our codes so that you can easily handle both two data representations more robustly. 
 
 
-:heart: **Source Codes**: Please check this [**[folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_Codes)**] for my full program. 
+:heart: **Source Codes**: Please check this [**[folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes)**] for my full source codes. 
 
-- **Usage:** Our program is easy to use if you're using **Win10+**. After downloading the entire directory, you can directly start the program by double clicking the **``TreeFromPoint.exe``**. If encountering any warnings, please make sure that your PC supports **OpenGL** and **CMake**. Pre-installation of **C++ IDEs** (e.g. Visual Studio 2019+ or Qt5.8+) is suggested.
+You can use Visual Studio 2019+ or Qt5.8+ to easily complie this project. Please make sure that your PC can support CMAKE and OpenGL in advance.
 
 - **Test Point Cloud:** Please also download **this example 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
+
+- **Executable:** If you're using **Win10+**, we also released a exe version for a quick start . After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly start the program by double clicking the **``TreeFromPoint.exe``**.
 
 :heart: **My software** (User Interface):
 

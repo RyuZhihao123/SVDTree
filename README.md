@@ -20,7 +20,7 @@ Since point clouds are way more complex and common than the voxel representation
 
 - **Test 3D Point Cloud:** Please also download **this example 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
 
-- **Executable:** If you're using **Win10+**, we also released a exe version for a quick start . After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly start the program by double clicking the **``TreeFromPoint.exe``**.
+- **Executable:** If you're using **Win10+**, we strongly suggest you to try a exe version that we released for a quick start. After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly start the program by double clicking the **``TreeFromPoint.exe``**.
 
 :heart: **My software** (User Interface):
 

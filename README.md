@@ -16,7 +16,7 @@ Since point clouds are way more complex and common than the voxel representation
 
 :heart: **Source Codes**: Please check this [**[folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes)**] for my full source codes. 
 
-- **Usage:** You can use Visual Studio 2019+ or Qt5.8+ to easily complie this project. Please make sure that your PC can support CMAKE and OpenGL in advance.
+- **Usage:** You can use Visual Studio 2019+ or Qt5.8+ to easily complie this project. Please make sure that your PC can support **CMAKE** and **OpenGL** in advance.
 
 - **Test 3D Point Cloud:** Please also download **this example 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
 

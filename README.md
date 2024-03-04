@@ -38,13 +38,3 @@ Since point clouds are way more complex and common than the voxel representation
 </div>
 <br/>
 
-
-
-
-
-
-
-
-
-
-

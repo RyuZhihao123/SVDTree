@@ -18,7 +18,7 @@ Since point clouds are way more complex and common than the voxel representation
 
 - 🟢 **Source Codes**: Please check this [**[Folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes)**] to download my source codes. 
 
-- 🟠 **Test data of a 3D Point Cloud:** Please also download **this EXAMPLE 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
+- 🟠 **Test Data of a 3D Point Cloud:** Please also download **this EXAMPLE 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
 
 
 

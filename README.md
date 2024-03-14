@@ -21,7 +21,6 @@ Since point clouds are way more complex and common than the voxel representation
 - 🟠 **Test Data of a 3D Point Cloud:** Please also download **this EXAMPLE 3D point cloud file [[xyz file](https://github.com/RyuZhihao123/SVDTree/blob/main/Tree1_input.xyz)]** to quickly have a try with our software.
 
 
-
 :heart: **My software** (User Interface):
 
 <div align=center>

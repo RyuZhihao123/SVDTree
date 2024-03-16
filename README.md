@@ -14,7 +14,7 @@ This part is entirely implemented by myself so I released it seperately in my ow
 
 Since point clouds are way more complex and common than the voxel representation used in our paper, we released a **more Generic Version** of our codes so that you can easily handle both two data representations more robustly. 
 
-- 🔵 **Executable Program:** If you're using **Win10+**, we also strongly suggest you to try **the EXE version** that we released for quick start (推荐首先尝试该exe程序：无需任何编译+可直接双击使用). After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly run the program by double clicking the **``TreeFromPoint.exe``**.
+- 🔵 **Executable Program:** Please download the entire folder under this **[[LINK](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe)]**. If you're using **Win10+**, we also strongly suggest you to try **the EXE version** that we released for quick start (推荐首先尝试该exe程序：无需任何编译+可直接双击使用). After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly run the program by double clicking the **``TreeFromPoint.exe``**.
 
 - 🟢 **Codes**: Please check this [**[Folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes)**] to download my source codes. 
 

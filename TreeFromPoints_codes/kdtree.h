@@ -1,3 +1,4 @@
+// Zhihao Comments: The KDT implementation is borrowed from: https://github.com/jlblancoc/nanoflann
 
 #ifndef  NANOFLANN_HPP_
 #define  NANOFLANN_HPP_

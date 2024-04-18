@@ -16,7 +16,7 @@ Since point clouds are way more complex and common than the voxel representation
 
 - 📺 **Demo Video:** Please first watch this **[[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing)** to see the intructions of the usage of my software.
 
-- 🟥 **Download link:** Please get our software by downloading the entire **[[This Folder]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe)**. If you're using **Win10+**, we also strongly suggest you to try **the EXE version** that we released for quick start (Windowsシステムを使用する場合、このexeファイルをおすすめします！設定やコンパイルは必要ありません！). After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly run the program by double clicking the **``TreeFromPoint.exe``**.
+- 🟥 **Download link:** Please get our software by downloading the entire **[[This Folder]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe)**. If you're using **Win10+**, we also strongly suggest you to try **the EXE version** that we released for quick start . After downloading the entire [directory](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe), you can directly run the program by double clicking the **``TreeFromPoint.exe``**. (Windowsシステムを使用する場合、このexeファイルをおすすめします！設定やコンパイルは必要ありません！)
 
 - 📁 **Codes**: Please check this [**[Folder](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes)**] to download my source codes.
 

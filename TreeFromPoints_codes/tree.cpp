@@ -5,7 +5,7 @@ typedef KDTreeSingleIndexAdaptor<L2_Simple_Adaptor<double, PointCloud<double> > 
 
 Tree::Tree() :m_pointVBO_Vertex_Count(0),m_graphVBO_Vertex_Count(0),
     m_rootMinGraph(NULL),m_binRoot(NULL),m_process_stage(_STAGE_1),
-    m_isSkeletonBeColored(false){}
+    m_isSkeletonBeColored(true){}
 
 void Tree::loadPointsFrom(QVector<QVector3D> &vec, const QString &filename)
 {
@@ -271,129 +271,6 @@ void Tree::displayFinalSkeletonWithColors(bool b)
 }
 
 // [1] 从文件中加载三维模型的数据（顺便进行数据压缩，删除掉重复的点）
-//void Tree::readDataFromFile(QString filename)
-//{
-//    qDebug()<<"[1] 开始加载点云数据:"<<filename;
-//    initializeOpenGLFunctions();
-//    enterCurrentStageMode(_STAGE_1);
-//    // 包围盒信息
-//    double minx = 9999999;
-//    double maxx = -999999;
-//    double miny = 9999999;
-//    double maxy = -999999;
-//    double minz = 9999999;
-//    double maxz = -999999;
-
-//    // 点云数量
-//    int prevCount = 0;
-//    int lastCount = 0;
-
-//    QFile file(filename);
-//    if(!file.open(QIODevice::ReadOnly))
-//        return;
-//    QTextStream ts(&file);
-
-
-//    while(!ts.atEnd())
-//    {
-//        QStringList line = ts.readLine().split(" ");
-//        line.removeAll("");
-
-//        if(line.size() >= 4 && line[0] == "v")
-//        {
-//            QVector3D vec(line[1].toDouble(),line[2].toDouble(),line[3].toDouble());
-
-//            m_vertexs.push_back(vec);
-
-//            minx=minx > vec.x()?vec.x():minx;
-//            maxx=maxx < vec.x()?vec.x():maxx;
-//            miny=miny > vec.y()?vec.y():miny;
-//            maxy=maxy < vec.y()?vec.y():maxy;
-//            minz=minz > vec.z()?vec.z():minz;
-//            maxz=maxz < vec.z()?vec.z():maxz;
-//        }
-//    }
-//    file.close();
-
-//    prevCount = this->m_vertexs.size();
-//    qDebug()<<"  - 压缩前点云数量:"<<prevCount;
-
-//    // 修正到不会超过100的范围
-//    double radio,dx,dy,dz;
-//    dx = maxx - minx;
-//    dy = maxy - miny;
-//    dz = maxz - minz;
-
-//    double max = ((dx>dy)?dx:dy)>dz?((dx>dy)?dx:dy):dz;
-//    radio = 100.0/max;
-//    for(unsigned int i=0; i<m_vertexs.size(); i++)
-//    {
-//        m_vertexs[i].setX(m_vertexs[i].x());
-//        m_vertexs[i].setY(m_vertexs[i].y());
-//        m_vertexs[i].setZ(m_vertexs[i].z());
-
-//        m_vertexs[i].setX(m_vertexs[i].x()*radio);
-//        m_vertexs[i].setY(m_vertexs[i].y()*radio);
-//        m_vertexs[i].setZ(m_vertexs[i].z()*radio);
-//    }
-
-//    // 压缩点云数据，以提出重复点
-//    QList<int> removedIndex;    // 待删除点的索引
-
-//    PointCloud<double> cloud;   // 建立PointCloud
-//    VectorToPointCloud(m_vertexs,cloud);
-
-//    KDTree index(3, cloud, KDTreeSingleIndexAdaptorParams(30) );
-//    index.buildIndex();
-
-//    for(unsigned int i=0; i<this->m_vertexs.size(); i++)
-//    {
-//        if(removedIndex.contains(i))
-//            continue;
-//        std::vector< std::pair<size_t,double> > ret_matches;
-//        nanoflann::SearchParams params;
-
-//        // 待查询点
-//        const double query_pt[3] = {this->m_vertexs[i].x(),this->m_vertexs[i].y(),this->m_vertexs[i].z()};
-
-//        // 范围查询
-//        const int nMatches = index.radiusSearch(&query_pt[0], 0.1, ret_matches, params);
-
-//        for(int k=0; k<nMatches; k++)
-//        {
-//            if(fabs(ret_matches[k].second)<=0.0000001 && i!=ret_matches[k].first)  // 距离为0 并且不是本身
-//                removedIndex.push_back(ret_matches[k].first);
-//        }
-//    }
-
-//    cloud.pts.clear();
-
-//    qSort(removedIndex.begin(),removedIndex.end(),qGreater<int>());
-
-//    for(unsigned int i=0; i<removedIndex.size(); i++)
-//    {
-//        if(i==0)
-//            this->m_vertexs.removeAt(removedIndex[i]);
-//        else
-//        {
-//            if(removedIndex[i-1] != removedIndex[i])
-//            {
-//                this->m_vertexs.removeAt(removedIndex[i]);
-//            }
-//        }
-//    }
-//    lastCount = this->m_vertexs.size();
-//    qDebug()<<"  - 压缩后点云数量:"<<lastCount<<QString("(压缩率:%1\%)").arg(100*(float)lastCount/(float)prevCount);
-
-//    savePointsTo(this->m_vertexs,PATH_ORIGIN_POINTS);
-
-//    this->m_centerPos = getCenterFrom(this->m_vertexs);
-
-//    this->createPointVBO(this->m_vertexs);
-//    this->createGraphVBO();
-//}
-
-
 void Tree::readDataFromFile(QString filename)
 {
     qDebug()<<"[1] 开始加载点云数据:"<<filename;
@@ -712,6 +589,106 @@ void Tree::dijkstraMinGraph()
                 = this->m_branchGraph[rootIndex][i].second;
     }
 
+    // 开始
+    while(true)
+    {
+        int id=-1;   // 找到当前dist中未被访问过得最小的距离，
+        double min = MAX_INT;
+
+        for(unsigned int i=0; i<dist.size(); i++)
+        {
+
+            if(min > dist[i] && isVisted[i]==false)
+            {
+                min = dist[i];
+                id = i;
+            }
+        }
+
+        if(id == -1)  // 如果一个最近的点都没找到，也就是剩下的全部是MAX_INT的距离
+            break;
+
+        isVisted[id] = true;
+
+        // 找到后 更新dist  对于id的每一个邻居v
+        for(unsigned int i=0; i<m_branchGraph[id].size(); i++)
+        {
+            int v = m_branchGraph[id][i].first;  // 邻居的下标
+
+            double alt = dist[id] + m_branchGraph[id][i].second;
+
+            if(dist[v] > alt && isVisted[v]==false)
+            {
+                dist[v] = alt;
+                prev[v] = id;
+            }
+        }
+    }
+
+    // 修正 让与rootIndex没有连接起来的连接上
+    for(unsigned int i=0; i<prev.size(); i++)
+    {
+        if(i!=rootIndex && dist[i]<MAX_INT && prev[i]==-1)
+        {
+            prev[i] = rootIndex;
+        }
+    }
+
+    // 生成新的m_branchGraph
+    for(unsigned int i=0; i<m_branchGraph.size();i++)
+        this->m_branchGraph[i].clear();
+    this->m_branchGraph.clear();
+
+    m_branchGraph.resize(this->m_curVertexes.size());
+
+    for(unsigned int i=0; i<prev.size(); i++)
+    {
+        if(prev[i]==-1)
+            continue;
+
+        double edgeLength = this->m_curVertexes[i].distanceToPoint(this->m_curVertexes[prev[i]]);
+        this->m_branchGraph[i].resize(1);
+        this->m_branchGraph[i][0]=(QPair<int,double>(prev[i],edgeLength));
+    }
+
+    // 生成树骨架结构
+    QVector<TreeNode*> skeleton;
+
+    skeleton.fill(NULL,this->m_curVertexes.size());
+
+    for(unsigned int i=0; i<this->m_curVertexes.size();i++)
+    {
+        if(isVisted[i])  // 如果处于连通图中
+        {
+            skeleton[i] = new TreeNode(this->m_curVertexes[i]);
+        }
+    }
+
+    for(unsigned int i=0; i<prev.size();i++)
+    {
+        if(isVisted[i] && prev[i]!=-1)
+        {
+            skeleton[prev[i]]->childs.push_back(skeleton[i]);
+        }
+    }
+
+    this->m_rootMinGraph = skeleton[rootIndex];
+
+    // 遍历树生成距离
+    QVector<TreeNode*> branchs;
+    branchs.push_back(this->m_rootMinGraph);
+
+    while(branchs.size()!=0)
+    {
+        TreeNode* cur = branchs.front();
+        branchs.pop_front();
+
+        for(unsigned int i=0; i<cur->childs.size(); i++)
+        {
+            cur->childs[i]->dist = cur->dist+cur->pos.distanceToPoint(cur->childs[i]->pos);
+            branchs.push_back(cur->childs[i]);
+        }
+    }
 
     this->m_curVertexes.clear();
     this->m_leafPart.clear();
@@ -792,8 +769,253 @@ void Tree::divideIntoBins2(double minGapScale)
     enterCurrentStageMode(_STAGE_6);
 
     clearBinTree();
+
+    QVector<Bin*> finalbins;
+    for(unsigned int i=0; i<bins.size(); i++)
+    {
+        qDebug()<<"  - 当前BinID: "<<i<<QString("(%1pts)").arg(bins[i].pts.size());
+        // 基于当前访问的第i个bin，生成KDtree
+
+        double minGap = 999999;
+        int curRound = 0;
+        while(true)
+        {
+            // 根据当前的bins构建kd树
+            PointCloud<double> cloud;
+            VectorToPointCloud(bins[i].pts,cloud);
+
+            std::vector< std::pair<size_t,double> > ret_matches;
+            nanoflann::SearchParams params;
+
+            KDTree index(3, cloud, KDTreeSingleIndexAdaptorParams(10) );
+            index.buildIndex();
+
+            QVector<bool> isVisted;     // 标记是否被访问过
+            isVisted.fill(false,bins[i].pts.size());
+
+            if(curRound == 0)
+            {
+                // 首先求一个minGap
+                minGap = 0;
+                size_t* indices = new size_t[2];
+                double* dists = new double[2];
+                int _Count = 0;
+                for(unsigned int m=0; m<bins[i].pts.size(); m++)
+                {
+                    const double query_pt[3] = {bins[i].pts[m].x(),bins[i].pts[m].y(),bins[i].pts[m].z()};
+
+
+                    const int nMatches = index.knnSearch(&query_pt[0], 2, indices,dists);
+
+                    if(nMatches == 1)
+                        continue;
+                    else
+                    {
+                        minGap += dists[1];
+                        _Count++;
+                    }
+                }
+                delete [] indices;
+                delete [] dists;
+
+                minGap/=_Count;
+                minGap*=minGapScale;
+
+                qDebug()<<"    - MinGap:"<<minGap;
+            }
+            curRound ++;
+
+            // 从当前bin中找到一个尚未访问过的点
+            int startID = -1;
+            for(unsigned int k=0; k<bins[i].pts.size(); k++)
+            {
+                if(!isVisted[k])
+                {
+                    startID = k;
+                    break;
+                }
+            }
+            if(startID == -1)  // 对这个bin已经分割完成
+                break;
+
+            //qDebug()<<"     - 找到未访问过得ID:"<<startID;
+
+            QList<int> searchID;   // 还在搜索的顶点池
+            QList<int> removedId;  // 要被删除掉的点
+            searchID.push_back(startID);   // 把初始顶点加入到池中
+            Bin* tmpBin = new Bin();   // 临时的bin
+            tmpBin->level = i;    // 记录当前bin的等级
+
+            while(searchID.size() != 0)
+            {
+                int curID = searchID.front();
+                searchID.pop_front();
+                // 设置为已经访问过，并加入到当前bin中
+                isVisted[curID] = true;
+                removedId.push_back(curID);
+                tmpBin->pts.push_back(bins[i].pts[curID]);
+
+                // 根据搜索池中的第一个顶点进行范围查询，并将其中未访问过得的加入到顶点池中
+                const double query_pt[3] = {bins[i].pts[curID].x(),bins[i].pts[curID].y(),bins[i].pts[curID].z()};
+
+                const int nMatches = index.radiusSearch(&query_pt[0], minGap, ret_matches, params);
+
+                for(unsigned int k=0; k<nMatches; k++)
+                {
+                    if(isVisted[ret_matches[k].first])
+                        continue;
+                    isVisted[ret_matches[k].first] = true;
+                    searchID.push_back(ret_matches[k].first);
+                }
+            }
+
+            qSort(removedId.begin(),removedId.end(),qGreater<int>());
+            //qDebug()<<"     - 要从bin中删除:"<<removedId.size();
+            for(unsigned int k=0; k<removedId.size(); k++)
+            {
+                bins[i].pts.removeAt(removedId[k]);
+            }
+
+            finalbins.push_back(tmpBin);
+            cloud.pts.clear();
+            isVisted.clear();
+        }
+        bins[i].pts.clear();
+    }
     createPointVBOFromBins(finalbins);
 
+    qDebug()<<"  - 最终的bins数目: "<<finalbins.size();
+    bins.clear();
+
+    // 建立bins的树形结构，要根据bins中的每个点往上回溯。
+    // 首先计算每层的中心做表
+    for(unsigned int i=0; i<finalbins.size(); i++)
+    {
+        QVector3D center;
+        for(unsigned int k=0; k<finalbins[i]->pts.size(); k++)
+        {
+            center+=finalbins[i]->pts[k];
+        }
+
+        center = center/finalbins[i]->pts.size();
+        finalbins[i]->centerPos = center;
+    }
+
+    // 根据树结构构建出当前所包含的所有顶点
+
+    int treeNodesCount = getTreeCount(this->m_rootMinGraph);
+
+    qDebug()<<"[7] 开始建立Bins的树结构:"<<treeNodesCount;
+    QVector<TreeNode*> ptsArray;    // 记录树中所有顶点的数组
+    QVector<int> ptsParentArray;    // 记录树种所有顶点的父节点ID的数组
+    ptsArray.resize(treeNodesCount);
+    ptsParentArray.resize(treeNodesCount);
+    ptsParentArray.fill(-1);
+
+    int _count = 0;
+
+    QVector<TreeNode*> branchs;
+    branchs.push_back(this->m_rootMinGraph);
+
+    while(branchs.size()!=0)
+    {
+        TreeNode* cur = branchs.front();
+        branchs.pop_front();
+
+        ptsArray[_count] = cur;
+
+        for(unsigned int i=0; i<cur->childs.size(); i++)
+        {
+            cur->childs[i]->parentId = _count;
+            branchs.push_back(cur->childs[i]);
+        }
+        _count++;
+    }
+
+    for(unsigned int i=0; i<ptsParentArray.size(); i++)
+    {
+        ptsParentArray[i] = ptsArray[i]->parentId;
+    }
+
+    qDebug()<<"  - ptsArray & ptsParentArray Done";
+
+    //
+    QVector<int> ptsIndex;          // 每个顶点所属的bin的编号
+    ptsIndex.resize(treeNodesCount);
+
+    PointCloud<double> cloud;
+    cloud.pts.resize(treeNodesCount);
+    for(unsigned int i=0; i<ptsArray.size(); i++)
+    {
+        cloud.pts[i].x = ptsArray[i]->pos.x();
+        cloud.pts[i].y = ptsArray[i]->pos.y();
+        cloud.pts[i].z = ptsArray[i]->pos.z();
+
+    }
+
+    KDTree index(3, cloud, KDTreeSingleIndexAdaptorParams(10) );
+    index.buildIndex();
+
+
+    size_t* indices = new size_t[2];
+    double* dists = new double[2];
+    for(unsigned int i=0; i<finalbins.size(); i++)
+    {
+        finalbins[i]->ptsId.resize(finalbins[i]->pts.size());
+        for(unsigned int k=0; k<finalbins[i]->pts.size(); k++)
+        {
+            const double query_pt[3] = {finalbins[i]->pts[k].x(),finalbins[i]->pts[k].y(),finalbins[i]->pts[k].z()};
+
+            const int nMatches = index.knnSearch(&query_pt[0], 1, indices,dists);
+
+            if(nMatches > 0)
+            {
+                ptsIndex[indices[0]] = i;
+                finalbins[i]->ptsId[k] = indices[0];
+            }
+        }
+    }
+    delete[] indices;
+    delete[] dists;
+    cloud.pts.clear();
+
+    // 找每个bin的父亲Bin，当然第一个不用找
+    for(unsigned int i=1; i<finalbins.size(); i++)
+    {
+        QVector<int> binCount;   // 记录当前bin中的每个点，其父bin的个数
+        binCount.fill(0,finalbins.size());
+
+        for(unsigned int k=0; k<finalbins[i]->pts.size(); k++)
+        {
+            // 从index[k]开始回溯，直到找到上一层的结点
+            int pID = finalbins[i]->ptsId[k];
+            while(true)
+            {
+                pID = ptsParentArray[pID]; // 往回找一个ID
+
+                if(ptsIndex[pID] < i)
+                    break;
+            }
+            binCount[ptsIndex[pID]]++;
+        }
+
+        int max = 0;
+        int id = -1;
+        for(unsigned int k=0; k<binCount.size(); k++)
+        {
+            if(binCount[k]>max)
+            {
+                max = binCount[k];
+                id = k;
+            }
+        }
+
+        finalbins[id]->childs.push_back(finalbins[i]);
+
+        //qDebug()<<" ConnectBins: "<<i<<"-"<<id;
+    }
+
+    this->m_binRoot = finalbins[0];
 }
 
 void Tree::getFinalSkeleton()

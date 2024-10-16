@@ -35,8 +35,6 @@ protected slots:
     void slot_btnGetTreeSkeleton();
     void slot_btnOptimizeSkeleton();
 
-    void slot_btnSaveTreeStructures();
-
     void slot_ckb_DisplaySkeletonWithColor();
 
     void slot_btnSaveDepthBuffer();

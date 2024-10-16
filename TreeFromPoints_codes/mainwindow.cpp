@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::slot_btnLoadModel()
 {
-    QString filename = QFileDialog::getOpenFileName(this,"加载点云",".","Point Files (*.xyz)");
+    QString filename = QFileDialog::getOpenFileName(this,"Load Point Data",".","Point File (*.xyz)");
 
     if(filename == "")
         return;
@@ -130,19 +130,6 @@ void MainWindow::slot_btnSaveDepthBuffer()
         return;
 
     m_glWidget->saveDepthBuffer(ui->spinCaptureCount->value(),filename);
-}
-
-void MainWindow::slot_btnSaveTreeStructures()
-{
-    QString filename = QFileDialog::getExistingDirectory(this, tr("保存深度截图"),
-                               ".");
-
-    if(filename == "")
-        return;
-
-    //m_glWidget->saveTreeStructures(ui->spinCaptureCount->value(),filename);
-
-
 }
 
 void MainWindow::slot_cbxSetDisplayMode()

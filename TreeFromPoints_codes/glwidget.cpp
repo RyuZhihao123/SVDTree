@@ -66,7 +66,7 @@ void GLWidget::initializeGL()
     initShaders(m_programGraph,"Graph");
     initShaders(m_programFixedPipeLine,"Single");
 
-    //this->m_pointcloud.readDataFromFile("C:/Users/ZhihaoLiu123/Desktop/Tree.obj");
+    //this->m_pointcloud.readDataFromFile("C:/Users/LiewDennis/Desktop/Tree.obj");
 
     m_eyeDist = m_pointcloud.m_centerPos;
 
@@ -370,7 +370,7 @@ void GLWidget::slot_timerSaveCaptures()
     m_isReadDepthBuffer = true;
     this->update();
 
-//    QFile file("C:/Users/ZhihaoLiu123/Desktop/depthBuffer.txt");
+//    QFile file("C:/Users/LiewDennis/Desktop/depthBuffer.txt");
 
 //    if(!file.open(QIODevice::WriteOnly))
 //        return;

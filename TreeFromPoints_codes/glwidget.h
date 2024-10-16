@@ -49,9 +49,6 @@ public:
 
     void compareSkeletonWithOriginPts(bool b);
 
-
-    //void saveTreeStructures(const QString& filename);
-
     void startRoaming(bool b);
 
 protected:
@@ -65,7 +62,7 @@ protected:
 
     QOpenGLShaderProgram* m_programPoints;
     QOpenGLShaderProgram* m_programGraph;
-    QOpenGLShaderProgram* m_programFixedPipeLine; 
+    QOpenGLShaderProgram* m_programFixedPipeLine;  // 固定管线绘制shader
     QOpenGLShaderProgram* m_programLeafPoints;
     QList<QOpenGLShaderProgram*> m_programParts;
 

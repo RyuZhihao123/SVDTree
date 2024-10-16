@@ -15,9 +15,9 @@
 #include "params.h"
 #include "kdtree.h"
 #define MAX_INT 999999
-#define PATH_ORIGIN_POINTS "./res/cache/OriginPoints.pts"
-#define PATH_BRANCH_PART "./res/cache/BranchPart.pts"
-#define PATH_LEAVES_PART "./res/cache/LeavesPart.pts"
+#define PATH_ORIGIN_POINTS "./OriginPoints.pts"
+#define PATH_BRANCH_PART "./BranchPart.pts"
+#define PATH_LEAVES_PART "./LeavesPart.pts"
 
 #define PI 3.14
 

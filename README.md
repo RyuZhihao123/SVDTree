@@ -5,18 +5,20 @@ This page includes the program and software toolkits for our paper **SVDTree (Ac
 ## Project Hierarchy:
 This project was led by two co-first authors, each responsible for different parts seperately:
 
-• [**Zhihao Liu**](https://ryuzhihao123.github.io/): handles the **``Shape-guided 3D Tree Modeling``**, which takes **Voxels (Point Clouds)** as input and produces the final realistic 3D tree models. 
+• [**Zhihao Liu**](https://ryuzhihao123.github.io/): handles the **``Shape-guided 3D Tree Modeling``**, which takes **voxels (point clouds)** as input and produces the final realistic 3D tree models. 
 
 => [[Code (C++)]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes) [[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing) [[EXE Program]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe). Please refer to Sec.1 for detailed usage introduction.
 
-![image info](https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png)
+<div align=center>
+<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
+</div>
 
 • [**Yuan Li**](): handles the **``Voxel Diffusion Network``**, which generate rough voxels from tree images.
 
 => [[Code (Python)]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl)
 
 <div align=center>
-<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_1.png" height = "200" alt="ack" title="dasdasdsa title" align=center />
+<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_1.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 </div>
 
 
@@ -54,9 +56,9 @@ Please check this [[Folder]](https://github.com/RyuZhihao123/SVDTree/tree/main/T
 
 
 <div align=center>
-<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_1.png" height = "250" alt="ack" title="dasdasdsa title" align=center />
-<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_2.png" width = "250" alt="ack" title="dasdasdsa title" align=center />
-<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_3.png" width = "250" alt="ack" title="dasdasdsa title" align=center />
+<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_1.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
+<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_2.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
+<img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_UI_3.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 <br/><center><b>Fig. 1. The workflow of our software, <br>please refer to the video for more details.</b></center>
 </div>
 
@@ -92,7 +94,9 @@ In this section, we released the **neural network** that is designed for semanti
 Should you have any questions on this part, please feel free to reach out to [**Yuan Li**]().
 
 ### 2.1 - Installation:
-• **Download:** Please download the code for this part from this [[Folder]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl).
+• **Download:** 
+
+Please download the code for this part from this [[Folder]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl).
 
 • **Dependencies:**
 

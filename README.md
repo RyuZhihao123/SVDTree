@@ -15,7 +15,7 @@ This project was led by two co-first authors, each responsible for different par
 
 In this section, we released a **more generic version** of our codes so that you can easily handle both low-precision voxels or precise point clouds. 
 
-### Resources and demo:
+### Resources, codes, and demo:
 
 
 📺 **Demo Video:** We strongly suggest first watching this **[[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing)** to see the intructions of the usage of my software.
@@ -55,3 +55,11 @@ qmake TreeFromPoints.pro
 ```
 
 Then, please check the newly-compiled exe file under **``./release/``** path, and you can freely run it by clicking it.
+
+
+## \[Section 2\] Voxel Diffusion Network. 
+
+In this section, we released the **neural network** that we design for voxel inference. 
+
+### Source codes:
+The network is implemented in Python and PyTorch, please download the codes from this [folder](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl)**)

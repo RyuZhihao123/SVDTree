@@ -5,7 +5,7 @@ This page includes the program and software toolkits for our paper **SVDTree (Ac
 ## Project Hierarchy:
 This project was led by two co-first authors, each responsible for different parts seperately:
 
-• [**Zhihao Liu**](https://ryuzhihao123.github.io/): handles the **``Shape-guided 3D Tree Modeling``**, which takes **voxels (point clouds)** as input and produces the final realistic 3D tree models. 
+• [**Zhihao Liu**](https://ryuzhihao123.github.io/): handles the **``Shape-guided 3D Tree Modeling``** (CG part), which takes **voxels (point clouds)** as input and produces the final realistic 3D tree models. 
 
 => [[Code (C++)]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes) [[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing) [[EXE Program]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe). Please refer to Sec.1 for detailed introduction.
 
@@ -13,7 +13,7 @@ This project was led by two co-first authors, each responsible for different par
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 </div>
 
-• [**Yuan Li**](): handles the **``Voxel Diffusion Network``**, which generate rough voxels from tree images.
+• [**Yuan Li**](): handles the **``Voxel Diffusion Network``** (CNN part), which generate rough voxels from tree images.
 
 => [[Code (Python)]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl) Please refer to Sec.2 for detailed introduction.
 
@@ -24,7 +24,7 @@ This project was led by two co-first authors, each responsible for different par
 
 ## Section 1: Shape-guided 3D Tree Reconstruction. 
 
-In this section, we released a more adaptable version of our code, that is capable of reconstructing 3D tree structures from both **``voxels``** or **``dense point clouds``**. Typically, handling point clouds poses greater challenges compared to voxels, which were our original input setting. We hope this version could be helpful if you need to process such data formats.
+In this section, we released a more adaptable version of our code, that is capable of reconstructing 3D tree structures from both **``voxels``** or **``dense point clouds``**. Typically, handling point clouds poses greater challenges compared to voxels, which is our default input setting. We hope this version could be helpful if you need to process such complex data format.
 
 Should you have any questions on this part, please feel free to reach out to [**Zhihao Liu**](https://ryuzhihao123.github.io/).
 

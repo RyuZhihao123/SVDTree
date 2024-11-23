@@ -13,7 +13,7 @@ This project was led by two co-first authors, each responsible for different par
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 </div>
 
-• [**Yuan Li**](): handles the **``Voxel Diffusion Network``** (CNN part), which generate rough voxels from tree images.
+• [**Yuan Li**](): handles the **``Voxel Diffusion Network``** (CNN part), which is trained to generate rough semantic voxels.
 
 [[Code (Python)]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl) Please refer to Sec.2 for detailed introduction.
 

@@ -114,7 +114,7 @@ pip install tqdm fire einops pyrender pyrr trimesh ocnn timm scikit-image==0.18.
 We synthesize the dataset of diverse 3D tree models using a software that was developed by [**Zhihao Liu**](https://ryuzhihao123.github.io/). Please refer to this [**[GitHub page]**](https://github.com/RyuZhihao123/CHITreeProject?tab=readme-ov-file#1-tree-dataset-generator) for more details and to download the generation tool.
 
 
-Notebly, our tool enables automatic generation of realistic 3D trees with diverse species, and has been used for generating dataset by several external labs in their projects, including SIGGRAPH papers (e.g., [TreePartNet](https://vcc.tech/research/2021/TreePartNet)).
+Notebly, our tool enables automatic generation of realistic 3D trees with diverse species, and has been used for generating dataset by several external labs in their projects, including several SIGGRAPH/CHI/CVPR papers (e.g., [TreePartNet](https://vcc.tech/research/2021/TreePartNet)).
 
 
 

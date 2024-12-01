@@ -5,17 +5,17 @@ This page includes the program and software toolkits for our paper **SVDTree (Ac
 ## Project Hierarchy:
 This project was led by two co-first authors, each responsible for different parts seperately:
 
-• 🐱 [**Zhihao Liu**](https://ryuzhihao123.github.io/): mainly handles **``Shape-guided 3D Tree Modeling``** (3D Graphics part), which takes **voxels (point clouds)** as input and produces the final realistic 3D tree models. 
+🐱 [**Zhihao Liu**](https://ryuzhihao123.github.io/): mainly handles **``Shape-guided 3D Tree Modeling``** (3D Graphics part), which takes **voxels (point clouds)** as input and produces the final realistic 3D tree models. 
 
-[[Code (C++)]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes) [[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing) [[EXE Program]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe). Please refer to Sec.1 for detailed introduction.
+• [[Code (C++)]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes) [[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing) [[EXE Program]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe). Please refer to Sec.1 for detailed introduction.
 
 <div align=center>
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 </div>
 
-• 🐶 [**Yuan Li**](): mainly handles the **``Voxel Diffusion Network``** (CNN part), which is trained to generate rough semantic voxels.
+🐶 [**Yuan Li**](): mainly handles the **``Voxel Diffusion Network``** (CNN part), which is trained to generate rough semantic voxels.
 
-[[Code (Python)]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl) Please refer to Sec.2 for detailed introduction.
+• [[Code (Python)]](https://github.com/RyuZhihao123/SVDTree/tree/main/DiffTreeVxl) Please refer to Sec.2 for detailed introduction.
 
 <div align=center>
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_1.png" height = "150" alt="ack" title="dasdasdsa title" align=center />

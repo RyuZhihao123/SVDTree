@@ -9,6 +9,8 @@ This project was led by two co-first authors, each responsible for different par
 
 • [[Code (C++)]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_codes) [[Demo Video]](https://drive.google.com/file/d/1htelf6xldyFYocqnZ6rtEZxSvwj3Gy1I/view?usp=sharing) [[EXE Program]](https://github.com/RyuZhihao123/SVDTree/tree/main/TreeFromPoints_exe). Please refer to Sec.1 for detailed introduction.
 
+• ⭐ Please also refer to my another repository for a [more advanced point cloud 3D tree reconstruction software](https://github.com/RyuZhihao123/Point-cloud-3D-tree-reconstruction).
+
 <div align=center>
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_0.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
 </div>

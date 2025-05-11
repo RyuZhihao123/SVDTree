@@ -26,10 +26,11 @@ This project was led by two co-first authors, each responsible for different par
 
 ## Section 1: Shape-guided 3D Tree Reconstruction. 
 
+**Please notice that, we now developed [a More Advanced Version](https://github.com/RyuZhihao123/Point-cloud-3D-tree-reconstruction) for 3D Tree Reconstruction. We suggest to use that new one for this step.**
+
 In this section, we released a more adaptable version of our code, that is capable of reconstructing 3D tree structures from both **``voxels``** or **``dense point clouds``**. Typically, handling point clouds poses greater challenges compared to voxels, which is our default input setting. We hope this version could be helpful if you need to process such complex data format.
 
 Should you have any questions on this part, please feel free to reach out to [**Zhihao Liu**](https://ryuzhihao123.github.io/).
-
 
 ### 1.1 - Resources, codes, and demo:
 

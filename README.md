@@ -26,7 +26,7 @@ This project was led by two co-first authors, each responsible for different par
 
 ## Voxel-guided 3D Tree Reconstruction. 
 
-In this section, we released a more adaptable version of our code, that is capable of reconstructing 3D tree structures from **``voxels``** and **`point clouds``**.
+In this section, we released a more adaptable version of our code, that is capable of reconstructing 3D tree structures from **``voxels``** and **``point clouds``**.
 
 Should you have any questions on this part, please feel free to reach out to [**Zhihao Liu**](https://ryuzhihao123.github.io/).
 

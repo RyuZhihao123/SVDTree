@@ -30,7 +30,7 @@ In this section, we released a more adaptable version of our code, that is capab
 
 Should you have any questions on this part, please feel free to reach out to [**Zhihao Liu**](https://ryuzhihao123.github.io/).
 
-**Please notice that, we now developed [a More Advanced Version](https://github.com/RyuZhihao123/Point-cloud-3D-tree-reconstruction) for 3D Tree Reconstruction. We suggest to use that new one for this step.**
+**🔥 Please notice that, we now developed [a More Advanced Version](https://github.com/RyuZhihao123/Point-cloud-3D-tree-reconstruction) for 3D Tree Reconstruction. We suggest to use that new one for this step.**
 
 ### 1.1 - Resources, codes, and demo:
 

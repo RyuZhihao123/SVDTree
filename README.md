@@ -16,7 +16,7 @@ This project was led by two co-first authors, each responsible for different par
 </div>
 
 🐶 [**Yuan Li**](): mainly handles the **``Voxel Diffusion Network``** (CNN part), which is trained to generate rough semantic voxels.
-Please write to him for permission of getting the code of his network (He works in a military-related lab so please understand).
+Please write to him for permission of getting the code of his network.
 
 <div align=center>
 <img src="https://github.com/RyuZhihao123/SVDTree/blob/main/Fig_1.png" height = "150" alt="ack" title="dasdasdsa title" align=center />
